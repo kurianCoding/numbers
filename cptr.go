@@ -17,10 +17,9 @@ package main
 import "C"
 
 import (
-	"fmt"
 	"unsafe"
 )
 
-func Sum(int []array) {
-	fmt.Println(C.sum(C.int(len(array)), (*C.int)(unsafe.Pointer(&array[0]))))
+func Sum(array []int) int {
+	return int(C.sum(C.int(len(array)), (*C.int)(unsafe.Pointer(&array[0]))))
 }
